@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather to Go There</title>
+    <!-- D3 library source -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <!-- Plotly source -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- Leaflet source -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.heat/0.2.0/leaflet-heat.js"></script>
+    <!-- Masonry library source -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+    <!-- Our CSS -->
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+</head>
+<body>
+    <!-- Wrap the entire content in a masonry-container -->
+    <div class="masonry-container">
+        <!-- Header spans the entire webpage -->
+        <div class="masonry-item website_header">
+            <!-- ... Your header content ... -->
+            <h1 class="header1">Weather to Go There in the U.S.?</h1>
+            <h2 class="header2">A brief look at 2022 weather in the U.S.</h2>
+            <h4 class="header4">Select the weather aspect you want to review. Hover over the map to see specific values by weather station.
+                <br>The Top Ten Stations chart will adapt based on the chosen weather select and the state you choose.
+                <br>To dive into more detail by station, select the desired station.
+                <br><strong>Data Source</strong>: <a href="https://www.ncei.noaa.gov/metadata/geoportal/rest/metadata/item/gov.noaa.ncdc:C00516/html">NOAA Global Surface Summary of the Day (GSOD)</a>
+            </h4>
+            <!-- Our Primary Dropdown -->
+            <select id="selDataset">
+                <option value="Hottest">Hottest</option>
+                <option value="Coldest">Coldest</option>
+                <option value="Severity">Severity Rating</option>
+            </select>
+        </div>
+        <!-- Left side layout for heatmap and legend -->
+        <div class="masonry-item left-column">
+            <!-- ... Your heatmap and legend content ... -->
+            <!-- Our heatmap part -->
+            <div id="heatmap_space">
+                <div id="heatmap"></div>
+                <!-- Legend container inside the body -->
+                <div id="legend-container">
+                    <div id="legend"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Right side layout for top10 and stationInfo -->
+        <div class="masonry-item right-column">
+            <!-- ... Your top10 and stationInfo content ... -->
+            <!-- Top Right Subcolumn for Top 10 -->
+            <!-- Our top 10 chart part -->
+            <div id="top10_space" class="top-right-subcolumn">
+                <h3><label for="stateDataset">Select a State:</label>
+                <select id="stateDataset"></select> </h3>
+                <div id="top10_plot"></div>
+            </div>
+            <!-- Bottom Right Subcolumn for Table -->
+            <!-- Our station table part -->
+            <div id="stationInfo" class="bottom-right-subcolumn">
+                <h3><label for="stationSelect">Select a Station:</label>
+                <select id="stationSelect"></select></h3>
+                <table id="stationTable" class="table">
+                    <tr>
+                        <th id="station_identifier" colspan="2">Station ID: Station Name, State</th>
+                    </tr>
+                    <tr>
+                        <td>Absolute Min Temp (°F)</td>
+                        <td class="data-value" id="min_temp"></td>
+                    </tr>
+                    <tr>
+                        <td>Mean Temp (°F)</td>
+                        <td class="data-value" id="mean_temp"></td>
+                    </tr>
+                    <tr>
+                        <td>Absolute Max Temp (°F)</td>
+                        <td class="data-value" id="max_temp"></td>
+                    </tr>
+                    <tr>
+                        <td>Total Precipitation (Rain/Snow/etc)</td>
+                        <td class="data-value" id="total_precipitation"></td>
+                    </tr>
+                    <tr>
+                        <td>Days with approximately 6+ in of snow</td>
+                        <td class="data-value" id="high_sndp_change_days"></td>
+                    </tr>
+                    <tr>
+                        <td>Days with Tornado(s)</td>
+                        <td class="data-value" id="days_with_tornado"></td>
+                    </tr>
+                    <tr>
+                        <td>Days with Hail</td>
+                        <td class="data-value" id="days_with_hail"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Our Data -->
+    <script src="static/data/stations_all.js"></script>
+
+    <!-- Our JavaScript -->
+    <script src="static/js/logic_heat_top10_table.js"></script>
+</body>
+</html>
