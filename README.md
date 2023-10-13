@@ -1,7 +1,7 @@
 # Weather to Go There?
 A dashboard for a user to investigate U.S. weather to help determine whether to visit or move to a location in the U.S. based on 2022 weather data from NOAA Global Surface Summary of the Day (GSOD). 
 
-# Features
+# Original Features (Group Project)
 * Use SQL queries and python transformation to get the following data by weather station in the U.S.
   * Station ID, name, state, lattitude, longitude, elevation
   * Absolute minimum temperature in 2022
@@ -28,9 +28,12 @@ A dashboard for a user to investigate U.S. weather to help determine whether to 
     * populate station dropdown with all U.S. stations: state, ID, name
     * populate the table with the following data: absolute min temp, mean temp, absolute max temp, total snow, total precipitation, days with hail, days with tornados
 * Host the dashboard live: https://vt-bekah.github.io/weather-visuals-NOAA-GSOD/
+# New Features (Personal Additions)
+* Show the heat maps for investigation at the same time via Tableau: https://public.tableau.com/app/profile/rebekah.aldrich/viz/WeatherMapsNOAAGSOD/Dashboard1?publish=yes 
 
-Starting Page: <br> ![Starting Page](images/InitialWedbpage.png)
+Starting Webpage: <br> ![Starting Page](images/InitialWedbpage.png)
 Severity View: <br> ![Severity View](images/SeverityView.png)
+Tableau Maps: <br> ![Tableau Maps](images/TableauMaps.png)
 
 # File Notes
 **Main Branch**
@@ -63,10 +66,14 @@ Severity View: <br> ![Severity View](images/SeverityView.png)
 
 ## Prerequisites
 To view the webpage, you must have a web browser.<br>
-To run the jupyter notebook,you must have an environment with pyhon, jupyter notebook / lab, and BigQuery as well as a google account with with BigQuery project per the instructions within the jupyter notebook.
+To view the Tableau layout, you must create a free Tableau account (https://public.tableau.com/app/discover) and have a web browser. <br>
+To run the jupyter notebook, you must have an environment with pyhon, jupyter notebook / lab, and BigQuery as well as a google account with with BigQuery project per the instructions within the jupyter notebook.
 
 ## Display the webpage
 open https://vt-bekah.github.io/weather-visuals-NOAA-GSOD/
+
+## Display the Tableau view
+open https://public.tableau.com/app/profile/rebekah.aldrich/viz/WeatherMapsNOAAGSOD/Dashboard1?publish=yes
 
 ## Cloning Repo & opening the jupyter notebook
 ```
