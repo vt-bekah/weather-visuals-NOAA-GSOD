@@ -29,7 +29,8 @@ A dashboard for a user to investigate U.S. weather to help determine whether to 
     * populate the table with the following data: absolute min temp, mean temp, absolute max temp, total snow, total precipitation, days with hail, days with tornados
 * Host the dashboard live: https://vt-bekah.github.io/weather-visuals-NOAA-GSOD/
 # New Features (Personal Additions)
-* Show the heat maps for investigation at the same time via Tableau: https://public.tableau.com/app/profile/rebekah.aldrich/viz/WeatherMapsNOAAGSOD/Dashboard1?publish=yes 
+* Show the heat maps for investigation at the same time via Tableau: https://public.tableau.com/app/profile/rebekah.aldrich/viz/WeatherMapsNOAAGSOD/Dashboard1?publish=yes
+* Create a Tableau story that starts at the heatmap level, digs into state temperature and severity ratings at the state level showing variation across stations, and then dives into station specific details: https://public.tableau.com/app/profile/rebekah.aldrich/viz/WeatherMapsNOAAGSOD_DeeperDive/DivingInMoreDetail2022?publish=yes 
 
 Starting Webpage: <br> ![Starting Page](images/InitialWedbpage.png)
 Severity View: <br> ![Severity View](images/SeverityView.png)
